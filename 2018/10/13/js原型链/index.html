@@ -21,7 +21,7 @@
 <meta property="og:image" content="https://github.com/mqyqingfeng/Blog/raw/master/Images/prototype3.png">
 <meta property="og:image" content="https://github.com/mqyqingfeng/Blog/raw/master/Images/prototype4.png">
 <meta property="og:image" content="https://github.com/mqyqingfeng/Blog/raw/master/Images/prototype5.png">
-<meta property="og:updated_time" content="2018-10-15T07:18:08.743Z">
+<meta property="og:updated_time" content="2018-10-15T07:53:11.764Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js原型链">
 <meta name="twitter:description" content="原型到原型链构造函数创建对象我们先使用构造函数创建一个对象：12345Function Person()&amp;#123;&amp;#125;let person = new Person();person.name = &quot;Ernestwang&quot;console.log(person.name) // Ernestwang 在这个例子中，Person 就是一个构造函数，我们使用 new 创建了一个实例对象 per">
@@ -191,30 +191,6 @@ ga('send', 'pageview');
       
         <!-- 目录内容 -->
         
-          <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
-            <span class="btn-bg"></span>
-            <span class="btn-text">文章导航</span>
-          </p>
-          <div id="toc-article" class="toc-article">
-            <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
-            <strong class="toc-title">文章目录</strong>
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#原型到原型链"><span class="toc-number">1.</span> <span class="toc-text">原型到原型链</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#构造函数创建对象"><span class="toc-number">2.</span> <span class="toc-text">构造函数创建对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#prototype"><span class="toc-number">3.</span> <span class="toc-text">prototype</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#proto"><span class="toc-number">4.</span> <span class="toc-text">proto</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#constructor-NaN"><span class="toc-number">5.</span> <span class="toc-text">constructor</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#原型的原型"><span class="toc-number">6.</span> <span class="toc-text">原型的原型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#原型链"><span class="toc-number">7.</span> <span class="toc-text">原型链</span></a></li></ol>
-          </div>
-          <script type="text/javascript">
-            function showToc() {
-              var toc_article = document.getElementById("toc-article");
-              var show_toc_btn = document.getElementById("show-toc-btn");
-              toc_article.setAttribute("style", "display:block");
-              show_toc_btn.setAttribute("style", "display:none");
-            };
-            function showBtn() {
-              var toc_article = document.getElementById("toc-article");
-              var show_toc_btn = document.getElementById("show-toc-btn");
-              toc_article.setAttribute("style", "display:none");
-              show_toc_btn.setAttribute("style", "display:block");
-            };
-          </script>
-          
           <!-- 目录内容结束 -->
             <div class="article-entry" itemprop="articleBody">
               
@@ -388,19 +364,6 @@ ga('send', 'pageview');
             </div>
         </div>
         
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#原型到原型链"><span class="toc-number">1.</span> <span class="toc-text">原型到原型链</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#构造函数创建对象"><span class="toc-number">2.</span> <span class="toc-text">构造函数创建对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#prototype"><span class="toc-number">3.</span> <span class="toc-text">prototype</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#proto"><span class="toc-number">4.</span> <span class="toc-text">proto</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#constructor-NaN"><span class="toc-number">5.</span> <span class="toc-text">constructor</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#原型的原型"><span class="toc-number">6.</span> <span class="toc-text">原型的原型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#原型链"><span class="toc-number">7.</span> <span class="toc-text">原型链</span></a></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
         
     </div>
 </aside>

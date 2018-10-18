@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018 | 个人博客</title>
+  <title>个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="js vue react node">
-<meta property="og:type" content="website">
+  <meta name="description" content="ES6面向对象class简介我们在es5生成实例对象的方法都是通过构建函数实现的,如下面的例子12345678function Point(x, y) &amp;#123;  this.x = x;  this.y = y;&amp;#125;Point.prototype.toString = function () &amp;#123;  return &apos;(&apos; + this.x + &apos;, &apos; + this.y + &apos;">
+<meta name="keywords" content="js vue react node">
+<meta property="og:type" content="article">
 <meta property="og:title" content="个人博客">
-<meta property="og:url" content="http://yoursite.com/archives/2018/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/10/18/面向对象class/index.html">
 <meta property="og:site_name" content="个人博客">
+<meta property="og:description" content="ES6面向对象class简介我们在es5生成实例对象的方法都是通过构建函数实现的,如下面的例子12345678function Point(x, y) &amp;#123;  this.x = x;  this.y = y;&amp;#125;Point.prototype.toString = function () &amp;#123;  return &apos;(&apos; + this.x + &apos;, &apos; + this.y + &apos;">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-10-18T10:00:24.676Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="个人博客">
+<meta name="twitter:description" content="ES6面向对象class简介我们在es5生成实例对象的方法都是通过构建函数实现的,如下面的例子12345678function Point(x, y) &amp;#123;  this.x = x;  this.y = y;&amp;#125;Point.prototype.toString = function () &amp;#123;  return &apos;(&apos; + this.x + &apos;, &apos; + this.y + &apos;">
   
     <link rel="alternative" href="/atom.xml" title="个人博客" type="application/atom+xml">
   
@@ -160,94 +164,203 @@ ga('send', 'pageview');
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-面向对象class" class="article article-type-post "
+  itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/18/面向对象class/" class="archive-article-date">
-  	<time datetime="2018-10-18T10:00:12.567Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-18</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+        <!-- 目录内容 -->
+        
+          <!-- 目录内容结束 -->
+            <div class="article-entry" itemprop="articleBody">
+              
+                        <h2 id="ES6面向对象class"><a href="#ES6面向对象class" class="headerlink" title="ES6面向对象class"></a>ES6面向对象class</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>我们在es5生成实例对象的方法都是通过构建函数实现的,如下面的例子<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Point</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.x = x;</span><br><span class="line">  <span class="keyword">this</span>.y = y;</span><br><span class="line">&#125;</span><br><span class="line">Point.prototype.toString = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">'('</span> + <span class="keyword">this</span>.x + <span class="string">', '</span> + <span class="keyword">this</span>.y + <span class="string">')'</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Point(<span class="number">1</span>, <span class="number">2</span>);</span><br></pre></td></tr></table></figure></p>
+<p>但是上面这种写法和传统的面对对象语言有很多的区别（如java, c++）,所以es6提供一个语法糖class,本质上class也还是一个构造函数，上面的代码我们可以改造如下<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span>()</span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(x,y)&#123;</span><br><span class="line">    <span class="keyword">this</span>.x = x;</span><br><span class="line">    <span class="keyword">this</span>.y = y;</span><br><span class="line">  &#125;</span><br><span class="line">  toString()&#123;</span><br><span class="line">   <span class="keyword">return</span> <span class="string">'('</span> + <span class="keyword">this</span>.x + <span class="string">', '</span> + <span class="keyword">this</span>.y + <span class="string">')'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> p = <span class="keyword">new</span> Point(<span class="number">1</span>, <span class="number">2</span>);</span><br></pre></td></tr></table></figure></p>
+<p>上面代码定义了一个“类”，可以看到里面有一个constructor方法，这就是构造方法，而this关键字则代表实例对象。也就是说，ES5 的构造函数Point，对应 ES6 的Point类的构造方法。</p>
+<p>Point类除了构造方法，还定义了一个toString方法。注意，定义“类”的方法的时候，前面不需要加上function这个关键字，直接把函数定义放进去了就可以了。另外，方法之间不需要逗号分隔，加了会报错。</p>
+<p>我们上面说了class其实就是一个构造函数，下面我们用一段代码来验证他们<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span>()</span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>()&#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">typeOf Point  <span class="comment">// function</span></span><br><span class="line">Point.protype.constructor ===  Point <span class="comment">//true</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="类的实例属性和实例方法"><a href="#类的实例属性和实例方法" class="headerlink" title="类的实例属性和实例方法"></a>类的实例属性和实例方法</h3><p>与 ES5 一样，实例的属性和方法除非显式定义在其本身（即定义在this对象上），否则都是定义在原型上（即定义在class上）。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(x, y) &#123;</span><br><span class="line">    <span class="keyword">this</span>.x = x;</span><br><span class="line">    <span class="keyword">this</span>.y = y;</span><br><span class="line">    <span class="keyword">this</span>.intanceMethod = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">     <span class="keyword">return</span> <span class="string">'('</span> + <span class="keyword">this</span>.x + <span class="string">', '</span> + <span class="keyword">this</span>.y + <span class="string">')'</span>;</span><br><span class="line">    &#125; </span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  toString() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'('</span> + <span class="keyword">this</span>.x + <span class="string">', '</span> + <span class="keyword">this</span>.y + <span class="string">')'</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> point = <span class="keyword">new</span> Point(<span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line"></span><br><span class="line">point.toString() <span class="comment">// (2, 3)</span></span><br><span class="line"></span><br><span class="line">point.hasOwnProperty(<span class="string">'x'</span>) <span class="comment">// true</span></span><br><span class="line">point.hasOwnProperty(<span class="string">'y'</span>) <span class="comment">// true</span></span><br><span class="line">point.hasOwnProperty(<span class="string">'intanceMethod '</span>) <span class="comment">// true</span></span><br><span class="line">point.hasOwnProperty(<span class="string">'toString'</span>) <span class="comment">// false</span></span><br><span class="line">point.__proto__.hasOwnProperty(<span class="string">'toString'</span>) <span class="comment">// true</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="类的静态属性和静态方法"><a href="#类的静态属性和静态方法" class="headerlink" title="类的静态属性和静态方法"></a>类的静态属性和静态方法</h3><p>类相当于实例的原型，所有在类中定义的方法和属性，都会被实例继承。如果在一个方法和属性前，加上static关键字，就表示该方法不会被实例继承，而是直接通过类来调用，这就称为“静态方法,静态属性”。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span></span>&#123;</span><br><span class="line">  <span class="keyword">static</span> x = <span class="number">1</span></span><br><span class="line">  <span class="keyword">static</span> classMethod() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'hello'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Foo.classMethod() <span class="comment">// 'hello'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p= <span class="keyword">new</span> Point();</span><br><span class="line">p.classMethod()</span><br><span class="line"><span class="comment">// TypeError: foo.classMethod is not a function</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="类的私有属性和私有方法"><a href="#类的私有属性和私有方法" class="headerlink" title="类的私有属性和私有方法"></a>类的私有属性和私有方法</h3><p>目前，有一个提案，为class加了私有属性。方法是在属性名之前，使用#表示。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span> </span>&#123;</span><br><span class="line">  #x;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(x = 0) &#123;</span><br><span class="line">    #x = +x; // 写成 this.#x 亦可</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  get x() &#123; return #x &#125;</span><br><span class="line">  set x(value) &#123; #x = +value &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>上面代码中，#x就是私有属性，在Point类之外是读取不到这个属性的。由于井号#是属性名的一部分，使用时必须带有#一起使用，所以#x和x是两个不同的属性。</p>
+<p>私有属性可以指定初始值，在构造函数执行时进行初始化。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span> </span>&#123;</span><br><span class="line">  #x = 1;</span><br><span class="line">  <span class="keyword">constructor</span>() &#123;</span><br><span class="line">    this.x = #x;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>之所以要引入一个新的前缀#表示私有属性，而没有采用private关键字，是因为 JavaScript 是一门动态语言，没有类型声明，使用独立的符号似乎是唯一的比较方便可靠的方法，能够准确地区分一种属性是否为私有属性。另外，Ruby 语言使用@表示私有属性，ES6 没有用这个符号而使用#，是因为@已经被留给了 Decorator。</p>
+<p>这种写法不仅可以写私有属性，还可以用来写私有方法。</p>
+<pre><code class="javascript"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span> </span>{
+  #a;
+  #b;
+  #sum() { return #a + #b; }
+  printSum() { console.log(#sum()); }
+  constructor(a, b) { #a = a; #b = b; }
+}
+</code></pre>
+<p>上面代码中，#sum()就是一个私有方法。</p>
 
+                          
+
+                            
+                              <div class="page-reward">
+                                <a href="javascript:;" class="page-reward-btn tooltip-top">
+                                  <div class="tooltip tooltip-east">
+                                    <span class="tooltip-item">
+                                      赏
+                                    </span>
+                                    <span class="tooltip-content">
+                                      <span class="tooltip-text">
+                                        <span class="tooltip-inner">
+                                          <p class="reward-p">
+                                            <i class="icon icon-quo-left"></i>
+                                            谢谢您的赞赏
+                                              <i class="icon icon-quo-right"></i>
+                                          </p>
+                                          <div class="reward-box">
+                                            
+                                              <div class="reward-box-item">
+                                                <img class="reward-img" src="/asset/img/alipay.jpg">
+                                                <span class="reward-type">支付宝</span>
+                                              </div>
+                                              
+                                                
+                                                  <div class="reward-box-item">
+                                                    <img class="reward-img" src="/asset/img/wechat.png">
+                                                    <span class="reward-type">微信</span>
+                                                  </div>
+                                                  
+                                          </div>
+                                        </span>
+                                      </span>
+                                    </span>
+                                  </div>
+                                </a>
+                              </div>
+                              
+            </div>
+            <div class="article-info article-info-index">
+              
+                  
+                    
+
+                      
+
+                          
+                            
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/10/18/面向对象class/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+                              
+                                <div class="clearfix"></div>
+            </div>
   </div>
 </article>
+
   
+<nav id="article-nav">
+  
+  
+    <a href="/2018/10/13/js原型链/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">js原型链</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/13/js原型链/" class="archive-article-date">
-  	<time datetime="2018-10-13T02:35:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-13</time>
-</a>
+      <aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/13/js原型链/">js原型链</a>
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
-        <div class="article-info info-on-right">
+
+        
           
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/javascript//" class="article-tag-list-link color1">javascript</a>
-        		</li>
-      		
-		</ul>
-	</div>
+                
 
+                      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
+                            
+                                
+                                  <section id="comments" style="margin:10px;padding:10px;background:#fff;">
+                                    <div id="vcomment" class="comment"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    var notify = 'false' == true ? true : false;
+    var verify = 'false' == true ? true : false;
+    window.onload = function () {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "vd38C1gNNqsdsWPOt9Y0NdYW-gzGzoHsz",
+            app_key: "XUg7DSewCUEv18T5gH0L1ykS",
+            placeholder: "请输入您的宝贵意见",
+            avatar: "mm"
+        });
+    }
+</script>
+                                  </section>
+                                  
 
 
+                                    
+                                          
           </div>
         </div>
       </div>
@@ -268,8 +381,8 @@ ga('send', 'pageview');
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>ES6面向对象class | 个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="简介我们在es5生成实例对象的方法都是通过构建函数实现的,如下面的例子12345678function Point(x, y) &amp;#123;  this.x = x;  this.y = y;&amp;#125;Point.prototype.toString = function () &amp;#123;  return &apos;(&apos; + this.x + &apos;, &apos; + this.y + &apos;)&apos;;&amp;#125;;v">
+  <meta name="description" content="ES6中的面向对象class">
 <meta name="keywords" content="js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ES6面向对象class">
 <meta property="og:url" content="http://yoursite.com/2018/10/16/面向对象class/index.html">
 <meta property="og:site_name" content="个人博客">
-<meta property="og:description" content="简介我们在es5生成实例对象的方法都是通过构建函数实现的,如下面的例子12345678function Point(x, y) &amp;#123;  this.x = x;  this.y = y;&amp;#125;Point.prototype.toString = function () &amp;#123;  return &apos;(&apos; + this.x + &apos;, &apos; + this.y + &apos;)&apos;;&amp;#125;;v">
+<meta property="og:description" content="ES6中的面向对象class">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-18T11:28:09.733Z">
+<meta property="og:updated_time" content="2018-10-19T01:27:13.500Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES6面向对象class">
-<meta name="twitter:description" content="简介我们在es5生成实例对象的方法都是通过构建函数实现的,如下面的例子12345678function Point(x, y) &amp;#123;  this.x = x;  this.y = y;&amp;#125;Point.prototype.toString = function () &amp;#123;  return &apos;(&apos; + this.x + &apos;, &apos; + this.y + &apos;)&apos;;&amp;#125;;v">
+<meta name="twitter:description" content="ES6中的面向对象class">
   
     <link rel="alternative" href="/atom.xml" title="个人博客" type="application/atom+xml">
   
@@ -212,7 +212,7 @@ ga('send', 'pageview');
           <!-- 目录内容结束 -->
             <div class="article-entry" itemprop="articleBody">
               
-                        <a id="more"></a>
+                        <p>ES6中的面向对象class<br><a id="more"></a></p>
 <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>我们在es5生成实例对象的方法都是通过构建函数实现的,如下面的例子<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Point</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.x = x;</span><br><span class="line">  <span class="keyword">this</span>.y = y;</span><br><span class="line">&#125;</span><br><span class="line">Point.prototype.toString = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">'('</span> + <span class="keyword">this</span>.x + <span class="string">', '</span> + <span class="keyword">this</span>.y + <span class="string">')'</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Point(<span class="number">1</span>, <span class="number">2</span>);</span><br></pre></td></tr></table></figure></p>
 <p>但是上面这种写法和传统的面对对象语言有很多的区别（如java, c++）,所以es6提供一个语法糖class,本质上class也还是一个构造函数，上面的代码我们可以改造如下<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span>()</span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(x,y)&#123;</span><br><span class="line">    <span class="keyword">this</span>.x = x;</span><br><span class="line">    <span class="keyword">this</span>.y = y;</span><br><span class="line">  &#125;</span><br><span class="line">  toString()&#123;</span><br><span class="line">   <span class="keyword">return</span> <span class="string">'('</span> + <span class="keyword">this</span>.x + <span class="string">', '</span> + <span class="keyword">this</span>.y + <span class="string">')'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> p = <span class="keyword">new</span> Point(<span class="number">1</span>, <span class="number">2</span>);</span><br></pre></td></tr></table></figure></p>
 <p>上面代码定义了一个“类”，可以看到里面有一个constructor方法，这就是构造方法，而this关键字则代表实例对象。也就是说，ES5 的构造函数Point，对应 ES6 的Point类的构造方法。</p>
